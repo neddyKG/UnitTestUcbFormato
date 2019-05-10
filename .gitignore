@@ -1,6 +1,7 @@
 HELP.md
 /target/
 !.mvn/wrapper/maven-wrapper.jar
+!/target/site/jacoco/
 
 ### STS ###
 .apt_generated
@@ -25,3 +26,6 @@ HELP.md
 /.nb-gradle/
 /build/
 uploads
+
+### VCode ###
+/.vscode
