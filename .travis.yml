@@ -1,0 +1,10 @@
+language: java
+cache:
+  npm: true
+  directories:
+    - .autoconf
+    - $HOME/.m2
+sudo: true
+dist: trusty
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
