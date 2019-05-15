@@ -5,5 +5,8 @@ cache:
     - .autoconf
     - $HOME/.m2
 sudo: true
+install:
+- mvn -N io.takari:maven:wrapper
+- ./mvnw install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
 after_success:
   - bash <(curl -s https://codecov.io/bash)
