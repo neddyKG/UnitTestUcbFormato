@@ -20,5 +20,6 @@ Archivos de prueba: <br> https://drive.google.com/drive/folders/1RtMQlcAhc3KmGGL
 Cualquier duda o consulta al whatsapp: 77971115
 
 #UNIT TESTS
-[![Build Status](https://travis-ci.org/JpRod96/UnitTestUcbFormato)
+[![Build Status](https://travis-ci.org/JpRod96/UnitTestUcbFormato.svg?branch=master)](https://travis-ci.org/JpRod96/UnitTestUcbFormato)
+
 [![codecov](https://codecov.io/gh/JpRod96/UnitTestUcbFormato/commit/3b47063a46f652f7066fc79833d783d201478c3f/graphs/sunburst.svg)](https://codecov.io/gh/JpRod96/UnitTestUcbFormato)
