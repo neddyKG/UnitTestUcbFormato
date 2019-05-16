@@ -38,7 +38,7 @@ public class PagesFinderTest {
 
     @Test
     public void isTheCoverInThePage() throws IOException {
-        pdfdocument = PDDocument.load(new File("./target/Perfil.pdf"));
+        pdfdocument = PDDocument.load(new File("./uploads/Perfil.pdf"));
         pagesFinder = new PagesFinder(pdfdocument);
         assertTrue(pagesFinder.isTheCoverInThePage(1));
         pdfdocument.close();
@@ -46,7 +46,7 @@ public class PagesFinderTest {
 
     @Test
     public void getCoverPage() throws InvalidPasswordException, IOException {
-        pdfdocument = PDDocument.load(new File("./target/Perfil.pdf"));
+        pdfdocument = PDDocument.load(new File("./uploads/Perfil.pdf"));
         pagesFinder = new PagesFinder(pdfdocument);
         assertEquals(1, pagesFinder.getCoverPage());
         pdfdocument.close();
@@ -54,7 +54,7 @@ public class PagesFinderTest {
 
     @Test
     public void isTheGeneralIndexInThePage() throws InvalidPasswordException, IOException {
-        pdfdocument = PDDocument.load(new File("./target/Perfil.pdf"));
+        pdfdocument = PDDocument.load(new File("./uploads/Perfil.pdf"));
         pagesFinder = new PagesFinder(pdfdocument);
         assertTrue(pagesFinder.isTheGeneralIndexInThePage(2));
         pdfdocument.close();
@@ -62,7 +62,7 @@ public class PagesFinderTest {
 
     @Test
     public void getGeneralIndexStartPage() throws InvalidPasswordException, IOException {
-        pdfdocument = PDDocument.load(new File("./target/Perfil.pdf"));
+        pdfdocument = PDDocument.load(new File("./uploads/Perfil.pdf"));
         pagesFinder = new PagesFinder(pdfdocument);
         assertEquals(2, pagesFinder.getGeneralIndexStartPage());
         pdfdocument.close();
@@ -70,7 +70,7 @@ public class PagesFinderTest {
 
     @Test
     public void isTheFigureTableIndexInThePage() throws InvalidPasswordException, IOException {
-        pdfdocument = PDDocument.load(new File("./target/Perfil.pdf"));
+        pdfdocument = PDDocument.load(new File("./uploads/Perfil.pdf"));
         pagesFinder = new PagesFinder(pdfdocument);
         assertTrue(pagesFinder.isTheFigureTableIndexInThePage(3));
         pdfdocument.close();
@@ -78,7 +78,7 @@ public class PagesFinderTest {
 
     @Test
     public void isTheFigureIndexInThePage() throws InvalidPasswordException, IOException {
-        pdfdocument = PDDocument.load(new File("./target/Perfil.pdf"));
+        pdfdocument = PDDocument.load(new File("./uploads/Perfil.pdf"));
         pagesFinder = new PagesFinder(pdfdocument);
         assertTrue(pagesFinder.isTheFigureIndexInThePage(4));
         pdfdocument.close();
@@ -86,7 +86,7 @@ public class PagesFinderTest {
 
     @Test
     public void isTheTableIndexInThePage() throws InvalidPasswordException, IOException {
-        pdfdocument = PDDocument.load(new File("./target/Perfil.pdf"));
+        pdfdocument = PDDocument.load(new File("./uploads/Perfil.pdf"));
         pagesFinder = new PagesFinder(pdfdocument);
         assertTrue(pagesFinder.isTheTableIndexInThePage(3));
         pdfdocument.close();
@@ -94,7 +94,7 @@ public class PagesFinderTest {
 
     @Test
     public void getGeneralIndexEndPage() throws InvalidPasswordException, IOException {
-        pdfdocument = PDDocument.load(new File("./target/Perfil.pdf"));
+        pdfdocument = PDDocument.load(new File("./uploads/Perfil.pdf"));
         pagesFinder = new PagesFinder(pdfdocument);
         assertEquals(2, pagesFinder.getGeneralIndexEndPage(2, 2));
         pdfdocument.close();
@@ -102,7 +102,7 @@ public class PagesFinderTest {
 
     @Test
     public void getFigureIndexStartPage() throws InvalidPasswordException, IOException {
-        pdfdocument = PDDocument.load(new File("./target/Perfil.pdf"));
+        pdfdocument = PDDocument.load(new File("./uploads/Perfil.pdf"));
         pagesFinder = new PagesFinder(pdfdocument);
         assertEquals(4, pagesFinder.getFigureIndexStartPage(2, 4));
         pdfdocument.close();
@@ -110,7 +110,7 @@ public class PagesFinderTest {
 
     @Test
     public void getFigureIndexEndPage() throws InvalidPasswordException, IOException {
-        pdfdocument = PDDocument.load(new File("./target/Perfil.pdf"));
+        pdfdocument = PDDocument.load(new File("./uploads/Perfil.pdf"));
         pagesFinder = new PagesFinder(pdfdocument);
         assertEquals(4, pagesFinder.getFigureIndexEndPage(4, 4));
         pdfdocument.close();
@@ -118,7 +118,7 @@ public class PagesFinderTest {
 
     @Test
     public void getTableIndexStartPage() throws InvalidPasswordException, IOException {
-        pdfdocument = PDDocument.load(new File("./target/Perfil.pdf"));
+        pdfdocument = PDDocument.load(new File("./uploads/Perfil.pdf"));
         pagesFinder = new PagesFinder(pdfdocument);
         assertEquals(3, pagesFinder.getTableIndexStartPage(2, 4));
         pdfdocument.close();
@@ -126,7 +126,7 @@ public class PagesFinderTest {
 
     @Test
     public void getTableIndexEndPage() throws InvalidPasswordException, IOException {
-        pdfdocument = PDDocument.load(new File("./target/Perfil.pdf"));
+        pdfdocument = PDDocument.load(new File("./uploads/Perfil.pdf"));
         pagesFinder = new PagesFinder(pdfdocument);
         assertEquals(3, pagesFinder.getTableIndexEndPage(3, 4));
         pdfdocument.close();
@@ -134,7 +134,7 @@ public class PagesFinderTest {
 
     @Test
     public void getLastIndexPage() throws InvalidPasswordException, IOException {
-        pdfdocument = PDDocument.load(new File("./target/Perfil.pdf"));
+        pdfdocument = PDDocument.load(new File("./uploads/Perfil.pdf"));
         pagesFinder = new PagesFinder(pdfdocument);
         assertEquals(4, pagesFinder.getLastIndexPage(2));
         pdfdocument.close();
@@ -142,7 +142,7 @@ public class PagesFinderTest {
 
     @Test
     public void isTheBibliographyInThePage() throws InvalidPasswordException, IOException {
-        pdfdocument = PDDocument.load(new File("./target/Perfil.pdf"));
+        pdfdocument = PDDocument.load(new File("./uploads/Perfil.pdf"));
         pagesFinder = new PagesFinder(pdfdocument);
         assertTrue(pagesFinder.isTheBibliographyInThePage(20));
         pdfdocument.close();
@@ -150,7 +150,7 @@ public class PagesFinderTest {
 
     @Test
     public void getBibliographyStartPage() throws InvalidPasswordException, IOException {
-        pdfdocument = PDDocument.load(new File("./target/Perfil.pdf"));
+        pdfdocument = PDDocument.load(new File("./uploads/Perfil.pdf"));
         pagesFinder = new PagesFinder(pdfdocument);
         assertEquals(20, pagesFinder.getBibliographyStartPage());
         pdfdocument.close();
@@ -158,7 +158,7 @@ public class PagesFinderTest {
 
     @Test
     public void getBibliographyEndPage() throws InvalidPasswordException, IOException {
-        pdfdocument = PDDocument.load(new File("./target/Perfil.pdf"));
+        pdfdocument = PDDocument.load(new File("./uploads/Perfil.pdf"));
         pagesFinder = new PagesFinder(pdfdocument);
         assertEquals(21, pagesFinder.getBibliographyEndPage(20, 22));
         pdfdocument.close();
@@ -166,7 +166,7 @@ public class PagesFinderTest {
 
     @Test
     public void isTheAnnexesStartInThePage() throws InvalidPasswordException, IOException {
-        pdfdocument = PDDocument.load(new File("./target/Perfil.pdf"));
+        pdfdocument = PDDocument.load(new File("./uploads/Perfil.pdf"));
         pagesFinder = new PagesFinder(pdfdocument);
         assertTrue(pagesFinder.isTheAnnexesStartInThePage(22));
         pdfdocument.close();
@@ -174,7 +174,7 @@ public class PagesFinderTest {
 
     @Test
     public void getAnnexesStartPage() throws InvalidPasswordException, IOException {
-        pdfdocument = PDDocument.load(new File("./target/Perfil.pdf"));
+        pdfdocument = PDDocument.load(new File("./uploads/Perfil.pdf"));
         pagesFinder = new PagesFinder(pdfdocument);
         assertEquals(22, pagesFinder.getAnnexesStartPage());
         pdfdocument.close();
@@ -182,7 +182,7 @@ public class PagesFinderTest {
 
     @Test
     public void getAnnexesEndPage() throws InvalidPasswordException, IOException {
-        pdfdocument = PDDocument.load(new File("./target/Perfil.pdf"));
+        pdfdocument = PDDocument.load(new File("./uploads/Perfil.pdf"));
         pagesFinder = new PagesFinder(pdfdocument);
         assertEquals(23, pagesFinder.getAnnexesEndPage(22));
         pdfdocument.close();
