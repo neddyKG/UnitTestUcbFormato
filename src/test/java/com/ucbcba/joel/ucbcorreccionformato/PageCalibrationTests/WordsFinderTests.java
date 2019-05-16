@@ -55,20 +55,5 @@ public class WordsFinderTests {
         assertEquals(wordsFinder.isTheWordInThePageAdvanced(page, seekWord), false);
     }
 
-    @Test
-    public void successfulSearchOfWordElementosOnPagesRange1To4() throws IOException {
-        String seekWord = "Elementos";
-        int initialPageIndex = 1;
-        int finalPageIndex = 4;
-        System.out.println(wordsFinder.findWordsFromPages(initialPageIndex, finalPageIndex, seekWord));
-        assertEquals(wordsFinder.findWordsFromPages(initialPageIndex, finalPageIndex, seekWord), true);
-    }
-
-    @Test
-    public void unsuccessfulSearchOfWordCesarOnPagesRange4To6() throws IOException {
-        String seekWord = "Cesar";
-        int initialPageIndex = 4;
-        int finalPageIndex = 6;
-        assertEquals(wordsFinder.findWordsFromPages(initialPageIndex, finalPageIndex, seekWord), false);
-    }
+ 
 }
