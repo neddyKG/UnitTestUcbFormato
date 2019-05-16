@@ -28,16 +28,47 @@ public class WordsFinderTests {
     }
 
     @Test
-    public void succesfulSearchOfWordUniversidadOnPage1() throws IOException {
-        String seekedWord = "UNIVERSIDAD";
+    public void successfulSearchOfWordUniversidadOnPage1() throws IOException {
+        String seekWord = "UNIVERSIDAD";
         int page = 1;
-        assertEquals(wordsFinder.isTheWordInThePage(page, seekedWord), true);
+        assertEquals(wordsFinder.isTheWordInThePage(page, seekWord), true);
     }
 
     @Test
-    public void succesfulSearchOfWordUniversidadOnPage2() throws IOException {
-        String seekedWord = "UNIVERSIDAD";
+    public void unsuccessfulSearchOfWordUniversidadOnPage2() throws IOException {
+        String seekWord = "UNIVERSIDAD";
         int page = 2;
-        assertEquals(wordsFinder.isTheWordInThePage(page, seekedWord), false);
+        assertEquals(wordsFinder.isTheWordInThePage(page, seekWord), false);
+    }
+
+    @Test
+    public void successfulAdvancedSearchOfWordUniversidadOnPage1() throws IOException {
+        String seekWord = "UNIVERSIDAD";
+        int page = 1;
+        assertEquals(wordsFinder.isTheWordInThePageAdvanced(page, seekWord), true);
+    }
+
+    @Test
+    public void unsuccessfulAdvancedSearchOfWordUniversidadOnPage2() throws IOException {
+        String seekWord = "UNiVErSIdAD";
+        int page = 2;
+        assertEquals(wordsFinder.isTheWordInThePageAdvanced(page, seekWord), false);
+    }
+
+    @Test
+    public void successfulSearchOfWordElementosOnPagesRange1To4() throws IOException {
+        String seekWord = "Elementos";
+        int initialPageIndex = 1;
+        int finalPageIndex = 4;
+        System.out.println(wordsFinder.findWordsFromPages(initialPageIndex, finalPageIndex, seekWord));
+        assertEquals(wordsFinder.findWordsFromPages(initialPageIndex, finalPageIndex, seekWord), true);
+    }
+
+    @Test
+    public void unsuccessfulSearchOfWordCesarOnPagesRange4To6() throws IOException {
+        String seekWord = "Cesar";
+        int initialPageIndex = 4;
+        int finalPageIndex = 6;
+        assertEquals(wordsFinder.findWordsFromPages(initialPageIndex, finalPageIndex, seekWord), false);
     }
 }
