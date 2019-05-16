@@ -55,5 +55,5 @@ public class WordsFinderTests {
         assertEquals(wordsFinder.isTheWordInThePageAdvanced(page, seekWord), false);
     }
 
- 
+
 }
