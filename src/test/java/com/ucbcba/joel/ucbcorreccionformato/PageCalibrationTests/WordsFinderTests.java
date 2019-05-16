@@ -28,16 +28,32 @@ public class WordsFinderTests {
     }
 
     @Test
-    public void succesfulSearchOfWordUniversidadOnPage1() throws IOException {
-        String seekedWord = "UNIVERSIDAD";
+    public void successfulSearchOfWordUniversidadOnPage1() throws IOException {
+        String seekWord = "UNIVERSIDAD";
         int page = 1;
-        assertEquals(wordsFinder.isTheWordInThePage(page, seekedWord), true);
+        assertEquals(wordsFinder.isTheWordInThePage(page, seekWord), true);
     }
 
     @Test
-    public void succesfulSearchOfWordUniversidadOnPage2() throws IOException {
-        String seekedWord = "UNIVERSIDAD";
+    public void unsuccessfulSearchOfWordUniversidadOnPage2() throws IOException {
+        String seekWord = "UNIVERSIDAD";
         int page = 2;
-        assertEquals(wordsFinder.isTheWordInThePage(page, seekedWord), false);
+        assertEquals(wordsFinder.isTheWordInThePage(page, seekWord), false);
     }
+
+    @Test
+    public void successfulAdvancedSearchOfWordUniversidadOnPage1() throws IOException {
+        String seekWord = "UNIVERSIDAD";
+        int page = 1;
+        assertEquals(wordsFinder.isTheWordInThePageAdvanced(page, seekWord), true);
+    }
+
+    @Test
+    public void unsuccessfulAdvancedSearchOfWordUniversidadOnPage2() throws IOException {
+        String seekWord = "UNiVErSIdAD";
+        int page = 2;
+        assertEquals(wordsFinder.isTheWordInThePageAdvanced(page, seekWord), false);
+    }
+
+
 }
