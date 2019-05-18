@@ -3,6 +3,7 @@ package com.ucbcba.joel.ucbcorreccionformato.UploadDownloadFileTests.SerivceTest
 import com.ucbcba.joel.ucbcorreccionformato.FormatControl.GetterWordLines;
 import com.ucbcba.joel.ucbcorreccionformato.PageCalibration.WordsFinder;
 import com.ucbcba.joel.ucbcorreccionformato.UploadDownloadFile.Exception.FileStorageException;
+import com.ucbcba.joel.ucbcorreccionformato.UploadDownloadFile.Exception.MyFileNotFoundException;
 import com.ucbcba.joel.ucbcorreccionformato.UploadDownloadFile.Property.FileStorageProperties;
 import com.ucbcba.joel.ucbcorreccionformato.UploadDownloadFile.Service.FileStorageService;
 import org.apache.pdfbox.pdmodel.PDDocument;
@@ -10,9 +11,12 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.UrlResource;
 import org.springframework.mock.web.MockMultipartFile;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
 
 import static org.junit.Assert.assertEquals;
 
@@ -40,11 +44,34 @@ public class FileStorageServiceTests {
         assertEquals(fileStorageService.storeFile(mockMultipartFile), "documentoVacio.pdf");
 
     }
+
+
+    @Test(expected = FileStorageException.class)
+    public void invalidFilePath() {
+        MockMultipartFile mockMultipartFile = new MockMultipartFile("file", "..", "multipart/form-data", "informe".getBytes());
+        fileStorageService.storeFile(mockMultipartFile);
+        thrown.expectMessage("¡Lo siento! El nombre del archivo contiene una secuencia de ruta no válida..." );
+
+    }
     @Test(expected = FileStorageException.class)
     public void unsuccesfulExcelFileUpload() {
         MockMultipartFile mockMultipartFile = new MockMultipartFile("file", "excel.xlsx", "multipart/form-data", "informe".getBytes());
         fileStorageService.storeFile(mockMultipartFile);
         thrown.expectMessage("¡Lo siento! Seleccione un archivo PDF por favor.");
+
+    }
+
+    @Test
+    public void succesfulLoadFileAsResource() throws MalformedURLException {
+        Resource resource = new UrlResource("file:/D:/respaldo%20neddy%20gonzalez/Desktop/CATO/9no%20Semestre/Ingenieria%20de%20Calidad/PRACTICA%203/UnitTestUcbFormato/uploads/documentoVacio.pdf ");
+        assertEquals(fileStorageService.loadFileAsResource("documentoVacio.pdf"), resource);
+
+    }
+
+    @Test(expected = MyFileNotFoundException.class)
+    public void unsuccesfulLoadFileAsResource() {
+        fileStorageService.loadFileAsResource("pokemon.pdf");
+        thrown.expectMessage("Archivo no encontrado pokemon.pdf");
 
     }
 
