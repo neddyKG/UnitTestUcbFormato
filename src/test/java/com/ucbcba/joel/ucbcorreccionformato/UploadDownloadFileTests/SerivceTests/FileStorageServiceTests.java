@@ -61,13 +61,6 @@ public class FileStorageServiceTests {
 
     }
 
-    @Test
-    public void succesfulLoadFileAsResource() throws MalformedURLException {
-        Resource resource = new UrlResource("file:/D:/respaldo%20neddy%20gonzalez/Desktop/CATO/9no%20Semestre/Ingenieria%20de%20Calidad/PRACTICA%203/UnitTestUcbFormato/uploads/documentoVacio.pdf ");
-        assertEquals(fileStorageService.loadFileAsResource("documentoVacio.pdf"), resource);
-
-    }
-
     @Test(expected = MyFileNotFoundException.class)
     public void unsuccesfulLoadFileAsResource() {
         fileStorageService.loadFileAsResource("pokemon.pdf");
