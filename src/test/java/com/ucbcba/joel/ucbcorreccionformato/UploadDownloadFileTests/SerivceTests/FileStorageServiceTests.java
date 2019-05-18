@@ -34,6 +34,12 @@ public class FileStorageServiceTests {
         fileStorageService = new FileStorageService(fileStorageProperties);
     }
 
+    @Test
+    public void succesfulPdfFileUpload() {
+        MockMultipartFile mockMultipartFile = new MockMultipartFile("file", "documentoVacio.pdf", "application/pdf", "informe".getBytes());
+        assertEquals(fileStorageService.storeFile(mockMultipartFile), "documentoVacio.pdf");
+
+    }
     @Test(expected = FileStorageException.class)
     public void unsuccesfulExcelFileUpload() {
         MockMultipartFile mockMultipartFile = new MockMultipartFile("file", "excel.xlsx", "multipart/form-data", "informe".getBytes());
@@ -41,5 +47,6 @@ public class FileStorageServiceTests {
         thrown.expectMessage("¡Lo siento! Seleccione un archivo PDF por favor.");
 
     }
+
 
 }
