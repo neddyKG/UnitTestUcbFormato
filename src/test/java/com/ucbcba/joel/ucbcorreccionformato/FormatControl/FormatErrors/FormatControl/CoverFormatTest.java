@@ -2,10 +2,11 @@ package com.ucbcba.joel.ucbcorreccionformato.FormatControl.FormatErrors.FormatCo
 
 import com.ucbcba.joel.ucbcorreccionformato.FormatControl.GetterWordLines;
 import com.ucbcba.joel.ucbcorreccionformato.FormatControl.WordsProperties;
-import com.ucbcba.joel.ucbcorreccionformato.PageCalibration.PdfDocument;
 import org.apache.pdfbox.pdmodel.PDDocument;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.notification.RunListener;
 
 import java.io.File;
 import java.io.IOException;
@@ -22,7 +23,6 @@ public class CoverFormatTest {
     Format coverFormat;
     List<WordsProperties> wordsLines;
     int COVER_PAGE = 1;
-    int NOT_COVER_PAGE = 8;
 
     @Before
     public void setUp() throws IOException {
@@ -183,5 +183,10 @@ public class CoverFormatTest {
         errorComments.add(errorComment);
 
         assertEquals(output, errorComments);
+    }
+
+    @After
+    public void tearDown() throws IOException {
+        pdfDocument.close();
     }
 }
