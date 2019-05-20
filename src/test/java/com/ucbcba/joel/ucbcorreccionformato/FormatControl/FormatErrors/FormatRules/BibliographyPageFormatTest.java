@@ -23,7 +23,7 @@ public class BibliographyPageFormatTest {
     public void setUp() throws IOException {
         File file = new File(CORRECT_DOCUMENT_PATH);
         pdf = PDDocument.load(file);
-        bibliographyPageFormat = new BibliographyPageFormat(pdf);
+        //bibliographyPageFormat = new BibliographyPageFormat(pdf);
     }
 
 }
