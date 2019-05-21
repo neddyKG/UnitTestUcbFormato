@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import com.ucbcba.joel.ucbcorreccionformato.PageCalibration.WordsFinder;
 import org.apache.pdfbox.pdmodel.PDDocument;
+import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -26,6 +27,11 @@ public class WordsFinderTests {
         pdf = PDDocument.load(file);
         wordsFinder = new WordsFinder(pdf);
     }
+
+    @After
+	public void tearDown() throws IOException {
+		pdf.close();
+	}
 
     @Test
     public void successfulSearchOfWordUniversidadOnPage1() throws IOException {
@@ -54,6 +60,5 @@ public class WordsFinderTests {
         int page = 2;
         assertEquals(wordsFinder.isTheWordInThePageAdvanced(page, seekWord), false);
     }
-
 
 }
