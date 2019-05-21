@@ -3,6 +3,7 @@ package com.ucbcba.joel.ucbcorreccionformato.FormatControl.FormatErrors.FormatCo
 import com.ucbcba.joel.ucbcorreccionformato.FormatControl.GetterWordLines;
 import com.ucbcba.joel.ucbcorreccionformato.FormatControl.WordsProperties;
 import org.apache.pdfbox.pdmodel.PDDocument;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -114,5 +115,10 @@ public class TittleFormatTest {
         expectedList.add(errorComment);
 
         assertEquals(output, expectedList);
+    }
+
+    @After
+    public void tearDown() throws IOException {
+        pdfDocument.close();
     }
 }
