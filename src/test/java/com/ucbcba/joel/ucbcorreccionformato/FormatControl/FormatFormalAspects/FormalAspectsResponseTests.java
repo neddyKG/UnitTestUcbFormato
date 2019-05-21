@@ -1,8 +1,6 @@
-package com.ucbcba.joel.ucbcorreccionformato.FormatControl.FormatErrors.FormatFormalAspects;
+package com.ucbcba.joel.ucbcorreccionformato.FormatControl.FormatFormalAspects;
 
 import org.junit.Test;
-
-import com.ucbcba.joel.ucbcorreccionformato.FormatControl.FormatFormalAspects.FormalAspectsResponse;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;

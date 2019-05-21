@@ -1,7 +1,5 @@
-package com.ucbcba.joel.ucbcorreccionformato.FormatControl.FormatErrors.FormatFormalAspects;
+package com.ucbcba.joel.ucbcorreccionformato.FormatControl.FormatFormalAspects;
 
-import com.ucbcba.joel.ucbcorreccionformato.FormatControl.FormatFormalAspects.FormalAspectsDetector;
-import com.ucbcba.joel.ucbcorreccionformato.FormatControl.FormatFormalAspects.FormalAspectsResponse;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.junit.After;
 import org.junit.Before;

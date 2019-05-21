@@ -1,8 +1,6 @@
-package com.ucbcba.joel.ucbcorreccionformato.FormatControl.FormatErrors.FormatFormalAspects;
+package com.ucbcba.joel.ucbcorreccionformato.FormatControl.FormatFormalAspects;
 
-import com.ucbcba.joel.ucbcorreccionformato.FormatControl.FormatFormalAspects.FormalAspectsController;
 import org.junit.Before;
-import org.junit.Test;
 
 public class FormalAspectsControllerTests {
 

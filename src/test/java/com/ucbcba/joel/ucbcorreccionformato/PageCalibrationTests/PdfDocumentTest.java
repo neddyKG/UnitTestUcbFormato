@@ -2,6 +2,7 @@ package com.ucbcba.joel.ucbcorreccionformato.PageCalibrationTests;
 
 import com.ucbcba.joel.ucbcorreccionformato.PageCalibration.PdfDocument;
 import org.apache.pdfbox.pdmodel.PDDocument;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -23,6 +24,11 @@ public class PdfDocumentTest {
         File file = new File(CORRECT_DOCUMENT_PATH);
         pdf = PDDocument.load(file);
         pdfDocument = new PdfDocument(pdf);
+    }
+
+    @After
+    public void tearDown() throws IOException {
+        pdf.close();
     }
 
     @Test
