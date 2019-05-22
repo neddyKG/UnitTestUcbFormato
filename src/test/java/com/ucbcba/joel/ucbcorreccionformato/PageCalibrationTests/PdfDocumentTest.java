@@ -31,6 +31,7 @@ public class PdfDocumentTest {
         pdf.close();
     }
 
+
     @Test
     public void coverPageOnPage1(){
         int expectedCoverPage = 1;
